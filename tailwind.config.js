@@ -14,6 +14,7 @@ export default {
         textDark: "black",
         brandColor: "#c026d3",
         hoverBrandColor: "#a855f7",
+        errorColor: "red",
       },
     },
   },

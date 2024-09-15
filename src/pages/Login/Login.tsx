@@ -20,28 +20,38 @@ const Login: React.FC = () => {
             onSubmit={handleSubmit((data) => console.log(data))}
             className="w-1/2"
           >
-            <h1 className="font-bold text-4xl text-center font-sans">
+            <h1 className="font-bold text-4xl text-center font-sans mb-2">
               Welcome
             </h1>
-            <div className="p-10">
-              <h2 className="font-medium text-sm p-2 text-start text-textLight font-sans mb-6">
+            <div className="px-10">
+              <h2 className="text-sm p-2 text-start text-textLight font-sans mb-6">
                 Bringing you closer with real-time chat, file sharing, and group
                 conversations in one place
               </h2>
-              <Input
-                type="text"
-                className="rounded-full mb-4 p-5"
-                placeholder="Email"
-                {...(register("email"), { required: true })}
-              />
-              {errors.email && <p>Please enter valid Email address</p>}
-              <Input
-                type="password"
-                className="mb-10 rounded-full p-5"
-                placeholder="Password"
-                {...(register("password"), { required: true })}
-              />
-              {errors.password && <p>Please enter valid password</p>}
+              <div className="mb-4">
+                <Input
+                  type="text"
+                  className="rounded-full p-5 mb-1"
+                  placeholder="Email"
+                  {...register("email", { required: true })}
+                />
+                <p className="text-xs text-errorColor text-left m-0 px-4">
+                  {" "}
+                  {errors.email && <p>Please enter valid Email address</p>}
+                </p>
+              </div>
+              <div className="mb-10">
+                <Input
+                  type="password"
+                  className="rounded-full p-5 mb-1"
+                  placeholder="Password"
+                  {...register("password", { required: true })}
+                />
+                <p className="text-xs text-left text-errorColor m-0 px-4">
+                  {" "}
+                  {errors.password && <p>Please enter valid password</p>}
+                </p>
+              </div>
 
               <Button
                 type="submit"
