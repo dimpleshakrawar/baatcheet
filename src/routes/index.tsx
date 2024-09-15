@@ -1,9 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
+//importing components 
+const Login = lazy(() => import('../pages/Login/Login'));
 
 export const routes = createBrowserRouter([
     {
         path: "/",
-        element: <p>login</p>,
+        element: (
+            <Suspense fallback={<p>Loading...</p>}>
+                <Login/>
+            </Suspense>
+            ),
         // loader: ,
         // children: [
         //   {

@@ -10,7 +10,6 @@ function App() {
     <div>
       <ToastContainer position='top-right' />
       <RouterProvider router={routes}/>
-      <p className='text-2xl font-semibold'>Hello</p>
     </div>
   )
 }
